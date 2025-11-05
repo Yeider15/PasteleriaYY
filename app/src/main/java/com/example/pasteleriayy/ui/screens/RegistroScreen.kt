@@ -22,10 +22,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.pasteleriayy.model.Usuario
 
 @Composable
-fun FormularioValidacion(modifier: Modifier = Modifier) {
+fun FormularioValidacion(navController: NavController, modifier: Modifier = Modifier) {
     // Estados para los valores de los campos
     var nombre by remember { mutableStateOf("") }
     var correo by remember { mutableStateOf("") }
@@ -43,7 +44,6 @@ fun FormularioValidacion(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
-            .systemBarsPadding()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
