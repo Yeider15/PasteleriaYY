@@ -14,10 +14,7 @@ import androidx.compose.ui.unit.dp
 import com.example.pasteleriayy.R
 import com.example.pasteleriayy.ui.theme.Crema
 
-/**
- * Formulario de contacto con validación y logo de la pastelería.
- * Estructura basada en el código del profesor.
- */
+
 @Composable
 fun ContactoScreen(modifier: Modifier = Modifier) {
     // Campos del formulario
