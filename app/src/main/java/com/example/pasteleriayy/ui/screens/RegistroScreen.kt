@@ -27,18 +27,15 @@ import com.example.pasteleriayy.model.Usuario
 
 @Composable
 fun FormularioValidacion(navController: NavController, modifier: Modifier = Modifier) {
-    // Estados para los valores de los campos
     var nombre by remember { mutableStateOf("") }
     var correo by remember { mutableStateOf("") }
     var contrasena by remember { mutableStateOf("") }
     var telefono by remember { mutableStateOf("") }
 
-    // Estados para los mensajes de error
     var nombreError by remember { mutableStateOf("") }
     var correoError by remember { mutableStateOf("") }
     var contrasenaError by remember { mutableStateOf("") }
 
-    // Estado para el mensaje de éxito
     var mensajeExito by remember { mutableStateOf("") }
 
     Column(
@@ -47,7 +44,6 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        //  TÍTULO DE LA PANTALLA
         Text(
             text = "Registro de Usuario",
             fontSize = 24.sp,
@@ -56,7 +52,6 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
             modifier = Modifier.padding(bottom = 24.dp)
         )
 
-        // Campo de nombre
         OutlinedTextField(
             value = nombre,
             onValueChange = {
@@ -174,7 +169,6 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
             Text("Registrar Usuario")
         }
 
-        // Mensaje de éxito
         if (mensajeExito.isNotEmpty()) {
             Spacer(modifier = Modifier.height(16.dp))
             Text(

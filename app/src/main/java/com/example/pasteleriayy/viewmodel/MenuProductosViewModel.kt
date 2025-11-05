@@ -4,6 +4,6 @@ import androidx.lifecycle.ViewModel
 import com.example.pasteleriayy.data.ProductosDataSource
 import com.example.pasteleriayy.model.Producto
 
-class MenuViewModel : ViewModel() {
+class MenuProductosViewModel : ViewModel() {
     val productos: List<Producto> = ProductosDataSource.getListaProductos()
 }

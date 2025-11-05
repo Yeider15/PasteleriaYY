@@ -11,31 +11,29 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.pasteleriayy.R
 import com.example.pasteleriayy.ui.theme.Crema
 
 
 @Composable
-fun ContactoScreen(modifier: Modifier = Modifier) {
-    // Campos del formulario
+fun ContactoScreen(navController: NavController, modifier: Modifier = Modifier) {
     var nombre by remember { mutableStateOf("") }
     var correo by remember { mutableStateOf("") }
     var telefono by remember { mutableStateOf("") }
     var mensaje by remember { mutableStateOf("") }
-    // Errores
+
     var nombreError by remember { mutableStateOf("") }
     var correoError by remember { mutableStateOf("") }
     var telefonoError by remember { mutableStateOf("") }
     var mensajeError by remember { mutableStateOf("") }
 
-    // Mensaje de éxito
     var mensajeExito by remember { mutableStateOf("") }
 
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(Crema)
-            .systemBarsPadding()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -51,7 +49,6 @@ fun ContactoScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Título
         Text(
             text = "Formulario de Contacto",
             style = MaterialTheme.typography.headlineSmall,
@@ -77,7 +74,6 @@ fun ContactoScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Campo correo
         OutlinedTextField(
             value = correo,
             onValueChange = {
@@ -94,7 +90,6 @@ fun ContactoScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Campo teléfono
         OutlinedTextField(
             value = telefono,
             onValueChange = {
@@ -111,7 +106,6 @@ fun ContactoScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Campo mensaje
         OutlinedTextField(
             value = mensaje,
             onValueChange = {
@@ -130,24 +124,20 @@ fun ContactoScreen(modifier: Modifier = Modifier) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Botón enviar
         Button(
             onClick = {
-                // Limpiar mensajes previos
                 nombreError = ""
                 correoError = ""
                 telefonoError = ""
                 mensajeError = ""
                 mensajeExito = ""
 
-                // Validaciones básicas
                 if (nombre.isBlank()) nombreError = "El nombre no puede estar vacío"
                 if (correo.isBlank()) correoError = "El correo no puede estar vacío"
                 else if (!correo.contains("@")) correoError = "Correo inválido"
                 if (telefono.isBlank()) telefonoError = "El teléfono no puede estar vacío"
                 if (mensaje.isBlank()) mensajeError = "Debe escribir un mensaje"
 
-                // Si no hay errores
                 if (nombreError.isEmpty() && correoError.isEmpty() &&
                     telefonoError.isEmpty() && mensajeError.isEmpty()
                 ) {
@@ -159,7 +149,6 @@ fun ContactoScreen(modifier: Modifier = Modifier) {
             Text("Enviar")
         }
 
-        // Mensaje de éxito
         if (mensajeExito.isNotEmpty()) {
             Spacer(modifier = Modifier.height(16.dp))
             Text(text = mensajeExito, color = Color(0xFF388E3C))
