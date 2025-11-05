@@ -1,7 +1,9 @@
 package com.example.pasteleriayy.model
-data class Usuario (
+
+data class Contacto(
+    val id: Int,
     val nombre: String,
     val correo: String,
-    val contrasena: String,
-    val telefono: String? = null
+    val telefono: String,
+    val mensaje: String
 )
