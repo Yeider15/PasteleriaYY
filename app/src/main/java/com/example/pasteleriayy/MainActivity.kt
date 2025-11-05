@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.example.pasteleriayy.navigation.AppNavigation
-import com.example.pasteleriayy.ui.theme.PasteleriaApp_P2Theme // Importa tu tema
+import com.example.pasteleriayy.ui.theme.PasteleriaYYTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         // Establecer el contenido de la actividad
         setContent {
             // 1. Aplicamos el tema a toda la aplicación
-            PasteleriaApp_P2Theme {
+            PasteleriaYYTheme {
                 // 2. Llamamos al componente de navegación principal, que renderiza la primera pantalla.
                 AppNavigation()
             }
