@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import java.time.LocalDate
 
 data class Promocion(
-    val id: Int,
+    val id:String,
     val nombre: String,
     val descripcion: String,
     val fechaFin: LocalDate,
