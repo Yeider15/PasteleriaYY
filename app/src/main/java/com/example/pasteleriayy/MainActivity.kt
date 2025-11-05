@@ -3,45 +3,20 @@ package com.example.pasteleriayy
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.pasteleriayy.ui.theme.PasteleriaYYTheme
+import com.example.pasteleriayy.navigation.AppNavigation
+import com.example.pasteleriayy.ui.theme.PasteleriaApp_P2Theme // Importa tu tema
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
+        // Establecer el contenido de la actividad
         setContent {
-            PasteleriaYYTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+            // 1. Aplicamos el tema a toda la aplicación
+            PasteleriaApp_P2Theme {
+                // 2. Llamamos al componente de navegación principal, que renderiza la primera pantalla.
+                AppNavigation()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    PasteleriaYYTheme {
-        Greeting("Android")
     }
 }
