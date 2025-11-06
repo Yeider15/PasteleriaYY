@@ -34,7 +34,6 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier = Modifie
         }
 
         composable(AppScreens.REGISTRO) {
-            // Llamada directa al formulario
             FormularioValidacion(navController = navController)
         }
 

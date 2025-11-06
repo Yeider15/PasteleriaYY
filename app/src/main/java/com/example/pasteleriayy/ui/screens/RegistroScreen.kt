@@ -74,7 +74,6 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Campo de correo
         OutlinedTextField(
             value = correo,
             onValueChange = {
@@ -96,7 +95,6 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Campo de contraseña
         OutlinedTextField(
             value = contrasena,
             onValueChange = {
@@ -119,7 +117,6 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Campo de teléfono (opcional)
         OutlinedTextField(
             value = telefono,
             onValueChange = { telefono = it },
@@ -129,16 +126,13 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Botón para enviar
         Button(
             onClick = {
-                // Limpiar errores y mensaje previo
                 nombreError = ""
                 correoError = ""
                 contrasenaError = ""
                 mensajeExito = ""
 
-                // Validar campos
                 if (nombre.isBlank()) {
                     nombreError = "El nombre no puede estar vacío"
                 }
@@ -153,7 +147,6 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
                     contrasenaError = "Debe tener al menos 6 caracteres"
                 }
 
-                // Si no hay errores, crear el usuario
                 if (nombreError.isEmpty() && correoError.isEmpty() && contrasenaError.isEmpty()) {
                     val usuario = Usuario(
                         nombre = nombre,

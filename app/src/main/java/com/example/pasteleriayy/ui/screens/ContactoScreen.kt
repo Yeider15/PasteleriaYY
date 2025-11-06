@@ -57,7 +57,6 @@ fun ContactoScreen(navController: NavController, modifier: Modifier = Modifier) 
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Campo nombre
         OutlinedTextField(
             value = nombre,
             onValueChange = {
