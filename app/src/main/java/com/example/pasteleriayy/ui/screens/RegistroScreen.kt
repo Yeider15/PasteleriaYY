@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -46,11 +47,11 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
     ) {
         Text(
             text = "Registro de Usuario",
-            fontSize = 24.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color(0xFF6200EE),
-            modifier = Modifier.padding(bottom = 24.dp)
+            style = MaterialTheme.typography.headlineSmall,
+            color = MaterialTheme.colorScheme.onBackground
+
         )
+        Spacer(modifier = Modifier.height(24.dp))
 
         OutlinedTextField(
             value = nombre,
@@ -95,6 +96,7 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Campo de contraseña
         OutlinedTextField(
             value = contrasena,
             onValueChange = {
@@ -117,6 +119,7 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // Campo de teléfono (opcional)
         OutlinedTextField(
             value = telefono,
             onValueChange = { telefono = it },
@@ -126,13 +129,16 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        // Botón para enviar
         Button(
             onClick = {
+                // Limpiar errores y mensaje previo
                 nombreError = ""
                 correoError = ""
                 contrasenaError = ""
                 mensajeExito = ""
 
+                // Validar campos
                 if (nombre.isBlank()) {
                     nombreError = "El nombre no puede estar vacío"
                 }
@@ -147,6 +153,7 @@ fun FormularioValidacion(navController: NavController, modifier: Modifier = Modi
                     contrasenaError = "Debe tener al menos 6 caracteres"
                 }
 
+                // Si no hay errores, crear el usuario
                 if (nombreError.isEmpty() && correoError.isEmpty() && contrasenaError.isEmpty()) {
                     val usuario = Usuario(
                         nombre = nombre,
