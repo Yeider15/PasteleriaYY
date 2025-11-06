@@ -12,6 +12,7 @@ import androidx.navigation.compose.composable
 import com.example.pasteleriayy.ui.screens.ContactoScreen
 import com.example.pasteleriayy.ui.screens.MenuProductosScreen
 import com.example.pasteleriayy.ui.screens.FormularioValidacion
+import com.example.pasteleriayy.ui.screens.PromocionesScreen
 
 object AppScreens {
     const val MENU = "menu"
@@ -25,8 +26,8 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier = Modifie
 
     NavHost(
         navController = navController,
-        startDestination = AppScreens.MENU, // Inicia siempre en el menú
-        modifier = modifier // Aplicar el padding para no chocar con la BottomNavBar
+        startDestination = AppScreens.MENU,
+        modifier = modifier
     ) {
         composable(AppScreens.MENU) {
             MenuProductosScreen(navController = navController)
@@ -43,17 +44,8 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier = Modifie
 
         // Ruta: PROMOCIONES
         composable(AppScreens.PROMOCIONES) {
-            SimplePlaceholderScreenContent(title = "Promociones")
+            PromocionesScreen(navController = navController)
         }
     }
 }
 
-@Composable
-fun SimplePlaceholderScreenContent(title: String) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text = "Pantalla de $title en construcción.")
-    }
-}

@@ -5,14 +5,13 @@ import com.example.pasteleriayy.R
 import com.example.pasteleriayy.model.Promocion
 import java.time.LocalDate
 
-// Este objeto asume que tienes recursos en R.drawable con los nombres pr001 a pr004
 object PromocionesDataSource {
 
     fun getListaPromociones(): List<Promocion> = listOf(
         Promocion(
             id = "OFR-001",
             nombre = "Dúo de Chocolate Loco 🍫🍫",
-            descripcion = "¡Lleva 2 Tortas Cuadradas de Chocolate (TC001) por un precio único! Perfecto para compartir (o no).",
+            descripcion = "¡Lleva 2 Tortas Cuadradas de Chocolate por un precio único! Perfecto para compartir (o no).",
             fechaFin = LocalDate.of(2025, 12, 15),
             precio = 75000.0,
             imagenResId = R.drawable.pr001
@@ -20,7 +19,7 @@ object PromocionesDataSource {
         Promocion(
             id = "OFR-002",
             nombre = "Frescura de Verano 🍓",
-            descripcion = "Torta Cuadrada de Frutas (TC002) con un 15% de descuento para celebrar la temporada.",
+            descripcion = "Torta Cuadrada de Frutas con un 15% de descuento para celebrar la temporada.",
             fechaFin = LocalDate.of(2025, 12, 31),
             precio = 42500.0,
             imagenResId = R.drawable.pr002
@@ -28,7 +27,7 @@ object PromocionesDataSource {
         Promocion(
             id = "OFR-003",
             nombre = "Café y Vainilla ☕",
-            descripcion = "Al comprar la Torta Circular de Vainilla (TT001), te regalamos un paquete de café artesanal local. ¡La combinación perfecta!",
+            descripcion = "Al comprar la Torta Circular de Vainilla , te regalamos un paquete de café artesanal local. ¡La combinación perfecta!",
             fechaFin = LocalDate.of(2025, 12, 1),
             precio = 40000.0,
             imagenResId = R.drawable.pr003

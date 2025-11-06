@@ -36,7 +36,7 @@ fun BottomNavBar(
     )
 
     NavigationBar(
-        containerColor = MaterialTheme.colorScheme.primary, // Fondo: Rosa Pastel
+        containerColor = MaterialTheme.colorScheme.primary,
     ) {
         navItems.forEach { item ->
             NavigationBarItem(
